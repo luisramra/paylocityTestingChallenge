@@ -1,0 +1,32 @@
+Bug Title
+    API accepts string value for dependants despite Swagger defining integer type
+
+Environment
+    Environment: Prod
+    Endpoint: POST /api/Employees
+    Date discovered: 02/27/2026
+
+Severity
+    low
+
+Priority
+    low
+
+Steps to Reproduce
+    1. Include valid Authorization in request
+    2. Send a post Request with the following payload
+    {
+    "firstName": "Luis",
+    "lastName": "Ramos",
+    "dependants": "2"
+    }
+
+Expected Result
+    - Status Code: 400 Bad Request
+
+Actual Result
+    Status Code: 200 OK
+    Value coerced to integer
+
+Impact
+    Contract violation, the Swagger defines dependants as an integer type and the type coercion is not mentioned

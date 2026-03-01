@@ -1,0 +1,27 @@
+Title
+    Dependants field allows decimal input and silently truncates values
+
+Severity
+    Medium
+
+Steps to Reproduce
+    1. Add or edit Employee
+    2. Enter dependants with decimal value:
+        1.9,32.9,0.9,-0.9
+    3.Save
+
+Expected result
+    field should reject decimal input
+    Validation message should indicate integer-only field
+    input should be number type with step of 1
+
+Actual result
+    UI accepts decimal
+    Input is text type
+    Value is silently truncated toward zero
+    No validation message is displayed
+
+Impact
+    Silent data modification resulting in posible incorrections on benefit calculations
+    Poor user feedback
+    Inconsistent validation with OpenAPI contract

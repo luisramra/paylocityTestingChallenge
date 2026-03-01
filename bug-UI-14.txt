@@ -1,0 +1,23 @@
+Title
+    UI does not handle expired session and displays empty dashboard without notification
+   
+Severity
+    Medium
+
+Steps to Reproduce
+    1. Log in to the application
+    2. Allow session to expire
+    3. Navigate or refresh dashboard
+
+Expected Result
+    -Redirect to Login page or
+    - Display "Session expired" message
+
+Actual Result
+    - API returns 401 unauthorized
+    - Dashboard remains visible
+    - Employee table appears empty
+    - No indication of authentication failure in the UI
+
+Impact
+    misleading user experience, confusion about data state and incorrect authentication error hadling 

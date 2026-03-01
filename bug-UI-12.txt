@@ -1,0 +1,28 @@
+Title
+    Concurrent edit after deletion causes persistent financial data corruption
+
+Severity
+    Critical
+
+Steps to Reproduce
+    1. Open Edit form for an employee in Tab A
+    2. Delete the same employee in Tab B
+    3. Return to Tab A
+    4. Click save
+
+Expected Result
+    - API should return 404 Not Found
+    - UI should display error
+    - The update should not happen
+    - Financial invariants must be preserved 
+
+Actual Result
+    - Update request succeeds
+    - Salary becomes 0
+    - Gross becomes 0
+    - Benefits cost recalculated
+    - Net becomes negative
+    - Corrupted values persist after refresh
+
+Impact
+    Financial data corruption, Business rules violated, No concurrency control, Critical integrity failure of data

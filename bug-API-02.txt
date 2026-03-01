@@ -1,0 +1,32 @@
+Bug Title
+    GET /api/Employees/{id} returns HTML error page with 500 status for invalid ID format
+
+Environment
+    Environment: Prod
+    Endpoint: GET /api/Employees
+    Date discovered: 02/26/2026
+
+Severity
+    High
+
+Priority
+    High
+
+
+Steps to Reproduce
+    1. Include a valid Authorization
+    2. Send GET request to /api/Employees/999999
+    3. Make sure id does not have the correct format 11111111-1111-1111-1111-111111111111
+
+Expected Result
+    - Status Code: 400 Bad Request (invalid format) OR
+    - Status Code: 404 Not Found (Resource does not exist)
+    - JSON error response
+
+Actual Result
+    - Status Code: 500 Internal Server Error
+    - Response content-type: text/html
+
+Impact
+    Unhandled backend exception, API returns HTML instead of JSON, failing with API contract
+    and indicates missing input validation

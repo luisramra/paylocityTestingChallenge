@@ -1,0 +1,22 @@
+Title
+    Double-clicking Save creates duplicate employees
+
+Severity
+    Medium
+
+Steps to Reproduce
+    Click "Add Employee"
+    Fill valid employee data
+    Double-click the "Save" button rapidly
+
+Expected Result
+    Only one employee should be created
+    Save button should be disabled after first click
+
+Actual Result
+    Two employee records are created
+
+Impact
+    Duplicate records
+    Poor UX
+    Potential data integrity issues

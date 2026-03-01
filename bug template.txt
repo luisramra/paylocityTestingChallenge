@@ -1,0 +1,11 @@
+Title
+   
+Severity
+
+Steps to Reproduce
+
+Expected Result
+
+Actual Result
+
+Impact

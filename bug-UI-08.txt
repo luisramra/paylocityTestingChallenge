@@ -1,0 +1,23 @@
+Title
+    Save button remains enabled during submission allowing duplicate employee creation
+
+Severity
+    Medium
+
+Steps to Reproduce
+    1. Click Add Employee
+    2. Enter valid employee data
+    3. Double-click the Save button
+
+Expected result
+    - Save button becomes disabled after first click
+    - Only one POST request is semantic
+    - Only one record is created
+
+Actual result
+    - Save button remains enabled
+    - Two POST request are sent
+    - Duplicated data with different ID
+
+Impact
+    Allows duplicated and not expected records, besides a poor user experience

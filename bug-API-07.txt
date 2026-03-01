@@ -1,0 +1,19 @@
+Bug Title
+    Swagger documents only 200 responses; API returns undocumented status codes
+
+    Environment: Prod
+    /api/Employees
+    Date discovered: 02/27/2026
+
+Severity
+    medium
+
+Priority
+    medium
+
+Observation
+    Swagger defines only 200 responses however several other return codes are implemented in the API
+
+
+Impact
+    Contract is not completed, the API consumers recieve unexpected status codes

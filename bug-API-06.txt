@@ -1,0 +1,27 @@
+Bug Title
+    ReadOnly fields accepted in request payload
+
+    Environment: Prod
+    Endpoint: POST /api/Employees
+    Date discovered: 02/27/2026
+
+Severity
+    low
+
+Priority
+    low
+
+Steps to Reproduce
+    1. Include valid Authorization in request
+    2. Send a post Request including ReadOnly fields
+
+Expected Result
+    - Status Code: 400 Bad Request (ReadOnly fields should not be allowed in the request)
+
+Actual Result
+    Status Code: 200 OK
+    Employee created successfully ReadOnly fields ignored.
+
+Impact
+    Contract violation, the Swagger defines several fields as ReadOnly and just ignoring them results
+    in a weak schema enforcement

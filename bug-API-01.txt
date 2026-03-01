@@ -1,0 +1,32 @@
+Bug Title
+    Non-existent Valid ID returns 200 OK with empty body
+
+Environment
+    Environment: Prod
+    Endpoint: GET/Delete/PUT /api/Employees/{id}
+    Date discovered: 02/26/2026
+
+Severity
+    Medium
+
+Priority
+    Medium
+
+Steps to Reproduce
+    1.Include a valid Authorization
+    2.Create employee
+    3.Capture ID
+    4.Delete employee
+    5.Send GET request to /api/Employees/{id}
+
+Expected Result
+    - Status Code: 404 Not Found
+    - Error message indicating resource doesn't exists
+
+Actual Result
+    Status Code: 200 OK
+    Empty response body
+
+Impact
+    For convention this goes agains REST semantics and may lead to logical errors since
+    extra validation would be necessary to reliably determine the resource exisistance.

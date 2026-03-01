@@ -1,0 +1,35 @@
+Bug Title
+    POST /api/Employees returns 405 Method Not Allowed for invalid payload types
+
+Environment
+    Environment: Prod
+    Endpoint: POST /api/Employees
+    Date discovered: 02/26/2026
+
+Severity
+    Medium
+
+Priority
+    Medium
+
+Steps to Reproduce
+    1. Get correct Auth header
+    2. Send POST request with an invalid payload
+        {
+        "firstName": "Test",
+        "lastName": "User",
+        "dependants": "two" | 1.5
+        } 
+
+Expected Result
+    - Status Code: 400 Bad Request
+    - Appropriate error message
+
+Actual Result
+    Status Code: 405 Method not allowed
+
+Impact
+    On other invalid values like -1 or 33 the response is consistent and there is a validation error message
+    and 400 Status, however dispite this values being also invalid an inconsistent status code is trown,
+    resulting in unpredictable API behavior.
+     

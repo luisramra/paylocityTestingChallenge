@@ -1,0 +1,26 @@
+Title
+    UI allows repeated invalid submissions without feedback
+
+Severity
+    Medium
+
+Steps to Reproduce
+    1. clic the edit or add an employee button
+    2. Fill with invalid employee data
+    3. click on "Save" button repeatedly
+
+Expected Result
+    Client side validation of field should prevent submission of request or
+    Error message should be displayed after backend returns 400 error
+    Save button should reflect error state
+
+Actual Result
+    PUT request returns 400 (visible in console log)
+    No error message is displayed for the user
+    Save button remains enabled
+    User can repeatedly submit invalid data
+
+Impact
+    No Error transparenci
+    Spam of unvalid and unnecessary backend traffic
+    Poor UX

@@ -1,0 +1,18 @@
+Title
+    Responsive Design of Benefits Dashboard Table breaks
+   
+Severity
+    Medium
+
+Steps to Reproduce
+    Login into Benefits Dashboard
+    Adjust Resolution below 992 px
+
+Expected Result
+    Table should adjust content to keep most of the Action buttons and design readable
+
+Actual Result
+    Table design breaks and a border cuts Net Pay field 
+
+Impact
+    Low UX specially in smaller resolution screens such as mobile 

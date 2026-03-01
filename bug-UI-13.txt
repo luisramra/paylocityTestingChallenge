@@ -1,0 +1,24 @@
+Title
+   Form retains invalid values after failed submission without indicating failure
+
+Severity
+    Medium
+
+Steps to Reproduce
+    1.Edit employee
+    2.Enter invalid value (e.g., dependants = -5)
+    3.Click Save
+
+Expected Result
+    - UI should display validation error
+    - Form should clearly indicate submission failed
+    - Data should reflect persisted state
+
+Actual Result
+    - Backend rejects request (400)
+    - Form retains invalid value
+    - No feedback shown
+    - User cannot tell save failed
+
+Impact
+    UI state inconsistent with backend resulting in possible user confusion and misleading interaction
